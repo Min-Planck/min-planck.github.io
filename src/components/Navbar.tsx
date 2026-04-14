@@ -102,7 +102,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-4 flex flex-col items-center gap-3 py-4 bg-black/80 backdrop-blur-md rounded-xl animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="absolute top-full left-0 right-0 mt-3 flex flex-col items-center gap-1 py-4 bg-[#0a0a0a] border border-white/10 rounded-xl shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
