@@ -4,23 +4,23 @@ import { info } from "@/data/info";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-primary text-gray-400 py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-sm">
-            © {new Date().getFullYear()} {info.name}. All rights reserved.
-          </p>
+    <footer className="py-12 text-center">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="flex flex-col items-center gap-6">
           <div className="flex space-x-6">
-            <Link href={info.github} target="_blank" className="hover:text-white transition-colors">
+            <Link href={info.github} target="_blank" className="p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all hover:text-white hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
               <Github size={20} />
             </Link>
-            <Link href={info.linkedin} target="_blank" className="hover:text-white transition-colors">
+            <Link href={info.linkedin} target="_blank" className="p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all hover:text-white hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
               <Linkedin size={20} />
             </Link>
-            <a href={`mailto:${info.email}`} className="hover:text-white transition-colors">
+            <a href={`mailto:${info.email}`} className="p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 transition-all hover:text-white hover:bg-white/10 hover:border-accent/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
               <Mail size={20} />
             </a>
           </div>
+          <p className="text-xs text-gray-500 tracking-widest uppercase">
+            © {new Date().getFullYear()} {info.name}
+          </p>
         </div>
       </div>
     </footer>

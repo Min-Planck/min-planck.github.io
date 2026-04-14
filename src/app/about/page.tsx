@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mb-16 text-center">
-        <h1 className="mb-4 text-4xl font-bold text-white">About Me</h1>
+         <h1 className="mb-4 text-4xl font-bold text-white">Giới thiệu</h1>
         <div className="h-1 w-20 bg-accent mx-auto rounded-full" />
       </div>
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section className="rounded-2xl border border-white/10 bg-secondary p-8">
           <div className="flex items-center gap-3 mb-4 text-accent">
             <User size={24} />
-            <h2 className="text-2xl font-bold text-white">Summary</h2>
+             <h2 className="text-2xl font-bold text-white">Summary</h2>
           </div>
           <p className="text-gray-400 leading-relaxed">
             {info.description}
