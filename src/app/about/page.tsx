@@ -1,7 +1,8 @@
 import { info } from "@/data/info";
 import { education } from "@/data/education";
+import { experience } from "@/data/experience";
 import TimelineItem from "@/components/TimelineItem";
-import { User, GraduationCap, Code, Heart } from "lucide-react";
+import { User, GraduationCap, Briefcase, Code, Heart } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -41,6 +42,25 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Experience */}
+        <section className="rounded-2xl border border-white/10 bg-secondary p-8">
+          <div className="flex items-center gap-3 mb-8 text-accent">
+            <Briefcase size={24} />
+            <h2 className="text-2xl font-bold text-white">Experience</h2>
+          </div>
+          <div className="flex flex-col">
+            {experience.map((item, idx) => (
+              <TimelineItem 
+                key={idx} 
+                title={item.role} 
+                subtitle={item.company} 
+                period={item.period} 
+                details={item.details} 
+              />
+            ))}
+          </div>
+        </section>
+
         {/* Education */}
         <section className="rounded-2xl border border-white/10 bg-secondary p-8">
           <div className="flex items-center gap-3 mb-8 text-accent">
@@ -49,7 +69,14 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col">
             {education.map((item, idx) => (
-              <TimelineItem key={idx} item={item} />
+              <TimelineItem 
+                key={idx} 
+                title={item.degree} 
+                subtitle={item.institution} 
+                period={item.period} 
+                details={item.details} 
+                extra={`GPA: ${item.gpa}`}
+              />
             ))}
           </div>
         </section>

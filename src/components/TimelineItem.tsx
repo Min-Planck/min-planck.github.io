@@ -1,11 +1,13 @@
 import React from "react";
-import { EducationItem } from "@/data/education";
-
 interface TimelineItemProps {
-  item: EducationItem;
+  title: string;
+  subtitle: string;
+  period: string;
+  details: string[];
+  extra?: string;
 }
 
-export default function TimelineItem({ item }: TimelineItemProps) {
+export default function TimelineItem({ title, subtitle, period, details, extra }: TimelineItemProps) {
   return (
     <div className="relative pl-8 pb-8 last:pb-0">
       {/* Line */}
@@ -16,15 +18,15 @@ export default function TimelineItem({ item }: TimelineItemProps) {
       
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <h4 className="text-lg font-bold text-white">{item.degree}</h4>
-          <span className="text-xs font-medium text-gray-500">{item.period}</span>
+          <h4 className="text-lg font-bold text-white">{title}</h4>
+          <span className="text-xs font-medium text-gray-500">{period}</span>
         </div>
-        <p className="text-sm font-medium text-accent">{item.institution}</p>
-        {item.gpa && (
-          <p className="text-xs text-gray-400">GPA: {item.gpa}</p>
+        <p className="text-sm font-medium text-accent">{subtitle}</p>
+        {extra && (
+          <p className="text-xs text-gray-400">{extra}</p>
         )}
         <ul className="mt-2 list-disc list-inside text-sm text-gray-400 space-y-1">
-          {item.details.map((detail, idx) => (
+          {details.map((detail, idx) => (
             <li key={idx}>{detail}</li>
           ))}
         </ul>
