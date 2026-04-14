@@ -20,8 +20,22 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
+        if (isOpen) {
+          setIsOpen(false);
+        }
         if (window.scrollY > lastScrollY && window.scrollY > 100) {
           setIsVisible(false);
         } else {
@@ -33,7 +47,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY]);
+  }, [isOpen, lastScrollY]);
 
   return (
     <nav className={cn(
@@ -88,7 +102,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-6 flex flex-col items-center gap-3 animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="absolute top-full left-0 right-0 mt-4 flex flex-col items-center gap-3 py-4 bg-black/80 backdrop-blur-md rounded-xl animate-in fade-in slide-in-from-top-2 duration-300">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
