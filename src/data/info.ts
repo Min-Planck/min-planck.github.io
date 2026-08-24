@@ -6,11 +6,13 @@ export const info = {
   email: "duypo03cbvn@gmail.com",
   github: "https://github.com/Min-Planck", 
   linkedin: "https://linkedin.com/in/quang-duy-hoàng-52a210272", 
-  cv: "/resume.pdf",
+  cv: "/cv_t8_2026_vie.pdf",
   skills: [
-    "Python", "PyTorch", "TensorFlow", "Scikit-learn",
+    "Python", "PyTorch", "TensorFlow", "Scikit-learn", "OpenCV", "Flower",
     "Federated Learning", "Dataset Distillation", "Contrastive Learning",
-    "Dify", "Kilo CLI", "OpenCode", "Git", "Docker"
+    "Agentic AI", "Dify", "Kilo CLI", "OpenCode",
+    "TypeScript", "C++", "Java", "SQL",
+    "FastAPI", "NestJS", "NextJS", "Angular", "Redis", "BullMQ", "Docker", "Git"
   ],
   hobbies: [
     "Nhạc J-Pop",
@@ -19,3 +21,4 @@ export const info = {
     "Tìm hiểu về vũ trụ và các hiện tượng thiên văn"
   ]
 };
+
